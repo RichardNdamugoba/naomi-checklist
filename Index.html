@@ -1,0 +1,228 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Family Preparedness Checklist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one narrow column, like a laminated sheet pinned beside a pantry door. */
+:root {
+  --paper: #E8E4DA;
+  --surface: #F2EFE7;
+  --ink: #272826;
+  --muted: #5A5C55;
+  --olive: #55603C;
+  --amber: #A8661F;
+  --line: #CBC5B7;
+  --display: "Bitter", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1C1D1B; --surface: #262825; --ink: #E9E5DB; --muted: #A7AA9F;
+    --olive: #A9B584; --amber: #DB9B45; --line: #3A3C37; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1C1D1B; --surface: #262825; --ink: #E9E5DB; --muted: #A7AA9F;
+  --olive: #A9B584; --amber: #DB9B45; --line: #3A3C37; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 680px; margin: 0 auto; }
+.brand { font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+h1 { font-family: var(--display); font-size: clamp(30px, 8vw, 44px); line-height: 1.1; margin: 0 0 14px; text-wrap: balance; }
+.lead { margin: 0 0 18px; max-width: 60ch; }
+.note { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 12px 14px; font-size: 15px; color: var(--muted); margin: 0 0 26px; }
+.progress { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-block: 1px solid var(--line); padding: 10px 0; margin: 0 0 8px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.progress .count { font-family: var(--mono); font-size: 15px; }
+.bar { flex: 1 1 140px; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--olive); transition: width .25s; }
+.reset { font: inherit; font-size: 14px; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.reset:hover { color: var(--ink); }
+section { margin: 34px 0 0; }
+h2 { font-family: var(--display); font-size: 24px; line-height: 1.2; margin: 0 0 4px; }
+.why { margin: 0 0 12px; color: var(--muted); font-size: 15px; max-width: 58ch; }
+ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+li { border-bottom: 1px solid var(--line); }
+label { display: flex; gap: 14px; align-items: flex-start; padding: 12px 2px; min-height: 48px; cursor: pointer; }
+input[type="checkbox"] { flex: none; width: 24px; height: 24px; margin-top: 1px; accent-color: var(--olive); cursor: pointer; }
+input:checked + span { color: var(--muted); }
+.tonight { display: inline-block; font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--amber); margin-right: 8px; }
+.calc { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px; margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: end; }
+.calc div { display: flex; flex-direction: column; gap: 4px; }
+.calc label.f { padding: 0; min-height: 0; font-size: 14px; color: var(--muted); display: block; cursor: default; }
+.calc input[type="number"] { width: 92px; font: inherit; font-family: var(--mono); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.calc .out { font-family: var(--mono); font-size: 22px; color: var(--ink); }
+.calc .out small { font-size: 14px; color: var(--muted); }
+input:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+footer h3 { font-family: var(--display); font-size: 17px; color: var(--ink); margin: 0 0 6px; }
+footer ul { border: 0; margin: 0 0 18px; padding-left: 18px; list-style: disc; }
+footer li { border: 0; padding: 2px 0; }
+a { color: var(--olive); text-underline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <p class="brand">Naomi Sato · Emergency Prep</p>
+  <h1>Family Preparedness Checklist</h1>
+  <p class="lead">Seven short lists, one for each episode so far. Tick items off as your household does them. Your ticks stay on this device.</p>
+  <p class="note">Naomi Sato is an AI-generated fictional character. This page summarizes public guidance and does not replace instructions from your local emergency authorities.</p>
+
+  <div class="progress" aria-live="polite">
+    <span class="count" id="count">0 of 0 done</span>
+    <div class="bar" aria-hidden="true"><i id="fill"></i></div>
+    <button class="reset" id="reset" type="button">Clear ticks</button>
+  </div>
+
+  <section>
+    <h2>1. Know where you would shelter</h2>
+    <p class="why">Official guidance is to get inside the nearest building, move away from windows, and stay put.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s1a"><span><span class="tonight">Tonight</span>Name the sturdiest nearby building for your home, your work and your children's school.</span></label></li>
+      <li><label><input type="checkbox" data-k="s1b"><span>In each place, pick the lowest and most central spot: a basement, or the middle of a multi-story building, away from outside walls.</span></label></li>
+      <li><label><input type="checkbox" data-k="s1c"><span>Learn the rule: get inside, stay inside, stay tuned. Expect to stay in your most protective spot for at least 24 hours unless officials say otherwise.</span></label></li>
+      <li><label><input type="checkbox" data-k="s1d"><span>If you were outdoors, carefully remove your outer layer of clothing and wash exposed skin with soap and water. Don't use hand sanitizer on skin.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Water</h2>
+    <p class="why">One gallon per person per day, for at least three days. Work out your household's number first.</p>
+    <div class="calc">
+      <div><label class="f" for="people">People</label><input id="people" type="number" min="1" max="40" value="4" inputmode="numeric"></div>
+      <div><label class="f" for="days">Days</label><input id="days" type="number" min="3" max="30" value="3" inputmode="numeric"></div>
+      <div><span class="out" id="gal">12 <small>gallons total</small></span></div>
+    </div>
+    <ul>
+      <li><label><input type="checkbox" data-k="s2a"><span><span class="tonight">Tonight</span>Write your gallon number on a sticky note and put it where you keep your supplies.</span></label></li>
+      <li><label><input type="checkbox" data-k="s2b"><span>Use tightly sealed plastic containers such as clean soft drink bottles. Avoid glass and milk cartons.</span></label></li>
+      <li><label><input type="checkbox" data-k="s2c"><span>Keep water somewhere cool, dark and easy to reach. Split it between two spots so one leak can't take it all.</span></label></li>
+      <li><label><input type="checkbox" data-k="s2d"><span>Write the date on every container and replace stored water about every six months.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Food</h2>
+    <p class="why">Emergency food does not have to look like survival food.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s3a"><span><span class="tonight">Tonight</span>Check the dates on three foods your family already eats.</span></label></li>
+      <li><label><input type="checkbox" data-k="s3b"><span>Keep at least three days of non-perishable food for everyone in your home.</span></label></li>
+      <li><label><input type="checkbox" data-k="s3c"><span>Put the newest items at the back and the oldest at the front, and use older food first.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Cooking without power</h2>
+    <p class="why">The risk in an outage is often carbon monoxide, from the wrong equipment used indoors.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s4a"><span><span class="tonight">Tonight</span>Write down three meals your family could eat with no power at all.</span></label></li>
+      <li><label><input type="checkbox" data-k="s4b"><span>Never use a gas stove, a charcoal or gas grill, or a generator inside to heat your home. It can cause carbon monoxide poisoning.</span></label></li>
+      <li><label><input type="checkbox" data-k="s4c"><span>Fit a battery-operated carbon monoxide detector.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Staying informed</h2>
+    <p class="why">Decide where your information will come from before you need it.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s5a"><span><span class="tonight">Tonight</span>Write five important phone numbers on paper. Phones run out of battery.</span></label></li>
+      <li><label><input type="checkbox" data-k="s5b"><span>Keep a battery-operated radio and check that it works.</span></label></li>
+      <li><label><input type="checkbox" data-k="s5c"><span>Keep a flashlight or battery lantern, with spare batteries.</span></label></li>
+      <li><label><input type="checkbox" data-k="s5d"><span>Choose official sources your family will trust, such as your local emergency management office, and follow their instructions.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Your family plan</h2>
+    <p class="why">The best plan is one that everyone in the house understands.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s6a"><span><span class="tonight">Tonight</span>Agree on where you would meet.</span></label></li>
+      <li><label><input type="checkbox" data-k="s6b"><span>Agree on who calls whom first.</span></label></li>
+      <li><label><input type="checkbox" data-k="s6c"><span>Decide who checks on anyone who needs extra help, including older adults, young children and pets.</span></label></li>
+      <li><label><input type="checkbox" data-k="s6d"><span>Talk it through together, then talk it through again in a month.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Bag basics</h2>
+    <p class="why">Build the bag around your real household. These are the basics; check Ready.gov for the full kit list.</p>
+    <ul>
+      <li><label><input type="checkbox" data-k="s7a"><span>Water</span></label></li>
+      <li><label><input type="checkbox" data-k="s7b"><span>Non-perishable food</span></label></li>
+      <li><label><input type="checkbox" data-k="s7c"><span>Flashlight with extra batteries</span></label></li>
+      <li><label><input type="checkbox" data-k="s7d"><span>Battery-operated radio</span></label></li>
+      <li><label><input type="checkbox" data-k="s7e"><span>First aid kit with its instruction manual</span></label></li>
+    </ul>
+  </section>
+
+  <footer>
+    <h3>Where this comes from</h3>
+    <ul>
+      <li><a href="https://ready.gov/radiation" target="_blank" rel="noopener">Ready.gov: Radiation emergencies</a> (shelter, 24 hours, clothing)</li>
+      <li><a href="https://Ready.Illinois.Gov/plan/water.html" target="_blank" rel="noopener">Ready Illinois: Emergency water</a> (amounts, containers, replacement)</li>
+      <li><a href="https://dhs.wisconsin.gov/publications/p00652c.pdf" target="_blank" rel="noopener">Wisconsin DHS: Emergency kit checklist</a> (food, radio, flashlight, first aid, carbon monoxide)</li>
+    </ul>
+    <p>Follow @lastshelter.naomi on Instagram for the full series. Always follow local emergency authorities during a real emergency.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var KEY = "naomi-checklist-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type="checkbox"][data-k]'));
+  var count = document.getElementById("count");
+  var fill = document.getElementById("fill");
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function save(state) {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  var state = load();
+
+  function render() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    count.textContent = done + " of " + boxes.length + " done";
+    fill.style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + "%";
+  }
+
+  boxes.forEach(function (b) {
+    b.checked = !!state[b.getAttribute("data-k")];
+    b.addEventListener("change", function () {
+      state[b.getAttribute("data-k")] = b.checked;
+      save(state);
+      render();
+    });
+  });
+
+  document.getElementById("reset").addEventListener("click", function () {
+    state = {};
+    boxes.forEach(function (b) { b.checked = false; });
+    save(state);
+    render();
+  });
+
+  var people = document.getElementById("people");
+  var days = document.getElementById("days");
+  var gal = document.getElementById("gal");
+  function calc() {
+    var p = Math.max(1, parseInt(people.value, 10) || 1);
+    var d = Math.max(3, parseInt(days.value, 10) || 3);
+    gal.innerHTML = (p * d) + " <small>gallons total</small>";
+  }
+  people.addEventListener("input", calc);
+  days.addEventListener("input", calc);
+  calc();
+  render();
+})();
+</script>
+
+</body></html>
